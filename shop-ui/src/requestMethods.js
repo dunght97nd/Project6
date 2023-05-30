@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 
-const BASE_URL = "https://ecommerce-api-h5af.onrender.com";
+const BASE_URL = "https://ecommerce-api-h5af.onrender.com/api";
 // const TOKEN =
 //   JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser
 //     .accessToken || "";
@@ -24,7 +24,7 @@ export const createAxios = (currentUser, dispatch, stateSuccess) => {
   const refreshToken = async () => {
     try {
       const res = await axios.post(
-        "https://ecommerce-api-h5af.onrender.com/auth/refresh",
+        "https://ecommerce-api-h5af.onrender.com/api/auth/refresh",
         {
           token: currentUser.refreshToken,
         }
